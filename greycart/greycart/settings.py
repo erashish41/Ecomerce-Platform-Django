@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -44,13 +44,18 @@ INSTALLED_APPS = [
 
 # settings.py
 import cloudinary
-import cloudinary.uploader
-import cloudinary.api	
-cloudinary.config( 
-  	cloud_name = "your_cloud_name",
-  	api_key = "your_api_key",
-  	api_secret = "your_api_secret"
+from decouple import config
+
+cloudinary.config(
+    cloud_name=config("CLOUDINARY_CLOUD_NAME"),
+    api_key=config("CLOUDINARY_API_KEY"),
+    api_secret=config("CLOUDINARY_API_SECRET"),
 )
+
+print("---------")
+print(config("CLOUDINARY_CLOUD_NAME"))
+print("---------")
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
