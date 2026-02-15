@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'category',
     'utils',
-    'cloudinary'
+    'cloudinary',
+    'accounts'
 ]
 
 # settings.py
@@ -85,6 +86,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'greycart.wsgi.application'
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
 
 
 # Database

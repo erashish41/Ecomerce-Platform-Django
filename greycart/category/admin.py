@@ -6,11 +6,13 @@ from django.contrib.admin import ModelAdmin
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('name',)}
     list_display = ['name','slug','description','category_type','is_active']
     list_filter = ['name','category_type','is_active']
     
     
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ("name",)}
     list_display = ['name','slug','description','category','price','is_active']
     list_filter = ['name','category','is_active','price']
