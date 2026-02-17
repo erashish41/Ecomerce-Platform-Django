@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'category',
     'utils',
     'cloudinary',
-    'accounts'
+    'accounts',
+    'store'
 ]
 
 # settings.py
@@ -73,7 +74,7 @@ ROOT_URLCONF = 'greycart.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
